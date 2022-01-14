@@ -1,22 +1,31 @@
 import React from 'react';
-import { Text, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
-const HomeScreen = () => {
-  return (<div style={{ width: '200px', height: '400px', background: 'gray', border: '4px dashed red' }}>
-  <Button onPress={() => { console.log('Button Clickeddd' )}}
-  accessibilityLabel="Learn more about this purple button"
-   title="Learn More" style={styles.text} value={'ASHIL'}>HomeScreen</Button>
-  <Text style={styles.text}>Menu</Text>
-  <Text style={styles.text}>Login</Text>
-  <Text style={styles.text}>LOGOUT</Text>
-  </div>
+const HomeScreen = ({ navigation }) => {
+  const { navigate } = navigation;
+  return (
+    <View>
+      <Button onPress={() => navigate('Components')}
+        title="Click to See components" style={styles.button} />
+      <Button onPress={() => navigate('List')}
+        title="Get List Demo" style={styles.button} />
+        <Button onPress={() => navigate('Image')}
+          title="Image Screen" style={styles.button} />
+      {/* <TouchableOpacity onPress={() => console.log('Touch Opacity Pressed')}>
+      <Text style={styles.text}>Get List DEmo with TouchableOpacity</Text>
+    </TouchableOpacity> */}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  text: {
+  button: {
     fontSize: 30,
+    shadowColor: 'gray'
   },
+  text: {
+    color: 'red'
+  }
 });
 
 export default HomeScreen;
