@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   const { navigate } = navigation;
@@ -9,11 +9,14 @@ const HomeScreen = ({ navigation }) => {
         title="Click to See components" style={styles.button} />
       <Button onPress={() => navigate('List')}
         title="Get List Demo" style={styles.button} />
-        <Button onPress={() => navigate('Image')}
-          title="Image Screen" style={styles.button} />
-      {/* <TouchableOpacity onPress={() => console.log('Touch Opacity Pressed')}>
-      <Text style={styles.text}>Get List DEmo with TouchableOpacity</Text>
-    </TouchableOpacity> */}
+      <Button onPress={() => navigate('Image')}
+        title="Image Screen" style={styles.button} />
+      <Button onPress={() => navigate('Count')}
+        title="Go to Counter Demo" style={styles.button} />
+      <Button onPress={() => navigate('Color')}
+        title="Go to Color Demo" style={styles.button} />
+      <Button onPress={() => navigate('Square')}
+        title="Go to Square Demo" style={styles.button} />
     </View>
   );
 };

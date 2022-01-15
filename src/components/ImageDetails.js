@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-const ImageDetails = (props) => {
-  console.log('props', props.title);
+const ImageDetails = ({ imageSource, title, score }) => {
   return (
     <View>
-      <Image source={props.imageSource} />
-      <Text>Image details - {props.title}</Text>
+      <Image source={imageSource} style={styles.image} />
+      <Text>Image details - {title}</Text>
+      <Text>Omage Score{score}</Text>
     </View>
   )
 };
@@ -14,7 +14,10 @@ const ImageDetails = (props) => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 22,
-    borderColor: 'red'
+  },
+  image: {
+    height: 50,
+    width: 50,
   }
 });
 
